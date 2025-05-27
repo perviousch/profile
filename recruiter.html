@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Pervious Chileya - Recruiter View</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'netflix': ['Helvetica Neue', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(30,30,30,0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23333" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .skill-bar {
+            transition: width 2s ease-in-out;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .netflix-red { background-color: #e50914; }
+        .netflix-red-hover:hover { background-color: #f40612; }
+    </style>
+</head>
+<body class="bg-black text-white font-netflix">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-black bg-opacity-90 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <button onclick="goBack()" class="flex items-center text-white hover:text-gray-300 transition-colors">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Profiles
+                </button>
+                <h1 class="text-xl font-bold">Recruiter View</h1>
+                <button class="netflix-red netflix-red-hover px-4 py-2 rounded text-white font-semibold transition-colors">
+                    Download CV
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Profile Info -->
+                <div class="fade-in">
+                    <div class="flex items-center mb-6">
+                        <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-red-600 mr-6">
+                            <img src="face.jpg?height=128&width=128" alt="Mr. Pervious Chileya" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h1 class="text-4xl md:text-5xl font-bold mb-2">Mr. Pervious Chileya</h1>
+                            <p class="text-xl text-red-400 font-semibold">BA Business Administration CMIS</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold mb-4 text-red-400">Professional Summary</h2>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            Versatile business professional with expertise in Business Administration and Computer Management Information Systems. 
+                            Proven track record in system development, digital marketing, and business operations. 
+                            Seeking opportunities to leverage technical skills and business acumen in dynamic environments.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4">
+                        <span class="bg-red-600 px-4 py-2 rounded-full text-sm font-semibold">Available for Hire</span>
+                        <span class="bg-gray-700 px-4 py-2 rounded-full text-sm">Full-time</span>
+                        <span class="bg-gray-700 px-4 py-2 rounded-full text-sm">Remote/Hybrid</span>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="fade-in">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-gray-900 p-6 rounded-lg text-center card-hover">
+                            <h3 class="text-3xl font-bold text-red-400 mb-2">5+</h3>
+                            <p class="text-gray-300">Years Experience</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg text-center card-hover">
+                            <h3 class="text-3xl font-bold text-red-400 mb-2">15+</h3>
+                            <p class="text-gray-300">Projects Completed</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg text-center card-hover">
+                            <h3 class="text-3xl font-bold text-red-400 mb-2">3</h3>
+                            <p class="text-gray-300">Core Specializations</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg text-center card-hover">
+                            <h3 class="text-3xl font-bold text-red-400 mb-2">100%</h3>
+                            <p class="text-gray-300">Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 text-red-400">Core Competencies</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Technical Skills -->
+                <div class="bg-black p-8 rounded-lg card-hover">
+                    <div class="flex items-center mb-6">
+                        <svg class="w-8 h-8 text-red-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold">Technical Skills</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">System Development</span>
+                                <span class="text-sm text-red-400">90%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-red-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Database Management</span>
+                                <span class="text-sm text-red-400">85%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-red-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Web Development</span>
+                                <span class="text-sm text-red-400">88%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-red-600 h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Skills -->
+                <div class="bg-black p-8 rounded-lg card-hover">
+                    <div class="flex items-center mb-6">
+                        <svg class="w-8 h-8 text-red-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold">Business Skills</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Project Management</span>
+                                <span class="text-sm text-red-400">92%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-red-600 h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Business Analysis</span>
+                                <span class="text-sm text-red-400">87%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-red-600 h-2 rounded-full" style="width: 87%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Strategic Planning</span>
+                                <span class="text-sm text-red-400">85%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-red-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing Skills -->
+                <div class="bg-black p-8 rounded-lg card-hover">
+                    <div class="flex items-center mb-6">
+                        <svg class="w-8 h-8 text-red-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold">Marketing Skills</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Digital Marketing</span>
+                                <span class="text-sm text-red-400">89%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-red-600 h-2 rounded-full" style="width: 89%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Content Strategy</span>
+                                <span class="text-sm text-red-400">84%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-red-600 h-2 rounded-full" style="width: 84%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Brand Management</span>
+                                <span class="text-sm text-red-400">82%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-red-600 h-2 rounded-full" style="width: 82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 text-red-400">Professional Journey</h2>
+            
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-red-600 h-full"></div>
+                
+                <!-- Timeline items -->
+                <div class="space-y-12">
+                    <!-- Current Role -->
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-gray-900 p-6 rounded-lg card-hover">
+                                <h3 class="text-xl font-bold text-red-400 mb-2">Freelance Professional</h3>
+                                <p class="text-gray-300 mb-2">2020 - Present</p>
+                                <p class="text-sm text-gray-400">
+                                    Providing system development, digital marketing, and business consulting services 
+                                    to various clients across different industries.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-4 h-4 bg-red-600 rounded-full relative z-10"></div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="w-4 h-4 bg-red-600 rounded-full relative z-10"></div>
+                        <div class="w-1/2 pl-8">
+                            <div class="bg-gray-900 p-6 rounded-lg card-hover">
+                                <h3 class="text-xl font-bold text-red-400 mb-2">BA Business Administration CMIS</h3>
+                                <p class="text-gray-300 mb-2">2016 - 2020</p>
+                                <p class="text-sm text-gray-400">
+                                    Specialized in Computer Management Information Systems with focus on 
+                                    business processes and technology integration.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Early Career -->
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-gray-900 p-6 rounded-lg card-hover">
+                                <h3 class="text-xl font-bold text-red-400 mb-2">Junior Developer</h3>
+                                <p class="text-gray-300 mb-2">2018 - 2020</p>
+                                <p class="text-sm text-gray-400">
+                                    Started career in system development while completing studies, 
+                                    gaining hands-on experience in web development and database management.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-4 h-4 bg-red-600 rounded-full relative z-10"></div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-8 text-red-400">Ready to Connect?</h2>
+            <p class="text-xl text-gray-300 mb-12">
+                I'm always open to discussing new opportunities and challenges.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-black p-6 rounded-lg card-hover">
+                    <svg class="w-8 h-8 text-red-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <h3 class="font-bold mb-2">Email</h3>
+                    <p class="text-gray-400">pervious.chileya@email.com</p>
+                </div>
+                
+                <div class="bg-black p-6 rounded-lg card-hover">
+                    <svg class="w-8 h-8 text-red-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                    </svg>
+                    <h3 class="font-bold mb-2">Phone</h3>
+                    <p class="text-gray-400">+260 XXX XXX XXX</p>
+                </div>
+                
+                <div class="bg-black p-6 rounded-lg card-hover">
+                    <svg class="w-8 h-8 text-red-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <h3 class="font-bold mb-2">Location</h3>
+                    <p class="text-gray-400">Zambia (Remote Available)</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="netflix-red netflix-red-hover px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Schedule Interview
+                </button>
+                <button class="border border-red-600 text-red-400 hover:bg-red-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Download Full CV
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        // Animate skill bars on scroll
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.style.width;
+                        entry.target.style.width = '0%';
+                        setTimeout(() => {
+                            entry.target.style.width = width;
+                        }, 100);
+                    }
+                });
+            });
+
+            skillBars.forEach(bar => observer.observe(bar));
+        }
+
+        // Initialize animations
+        window.addEventListener('load', function() {
+            animateSkillBars();
+            
+            // Fade in elements
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>

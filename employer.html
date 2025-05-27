@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Pervious Chileya - Employer View</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'netflix': ['Helvetica Neue', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(30,30,30,0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23333" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .netflix-green { background-color: #22c55e; }
+        .netflix-green-hover:hover { background-color: #16a34a; }
+        .timeline-line {
+            position: relative;
+        }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #22c55e, #16a34a);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 40px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 20px;
+            width: 16px;
+            height: 16px;
+            background: #22c55e;
+            border-radius: 50%;
+            border: 4px solid #000;
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-netflix">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-black bg-opacity-90 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <button onclick="goBack()" class="flex items-center text-white hover:text-gray-300 transition-colors">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Profiles
+                </button>
+                <h1 class="text-xl font-bold">Employer View</h1>
+                <button class="netflix-green netflix-green-hover px-4 py-2 rounded text-white font-semibold transition-colors">
+                    Download CV
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Profile Info -->
+                <div class="fade-in">
+                    <div class="flex items-center mb-6">
+                        <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-green-600 mr-6">
+                            <img src="face.jpg?height=96&width=96" alt="Mr. Pervious Chileya" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h1 class="text-4xl md:text-5xl font-bold mb-2">Pervious Chileya</h1>
+                            <p class="text-xl text-green-400 font-semibold">Business Administrator | Systems Developer | Marketing Specialist</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold mb-4 text-green-400">Professional Summary</h2>
+                        <p class="text-lg text-gray-300 leading-relaxed mb-4">
+                            Seasoned business administrator skilled in regulatory compliance, marketing, data management, 
+                            computer system development and implementing solutions. Known for logic, integrity, and strategically 
+                            driving results in fast-paced environments.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            Trusted for analytical abilities and intuitive reaction to propel growth across multiple industries 
+                            including retail, technology, and corporate governance.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4">
+                        <span class="bg-green-600 px-4 py-2 rounded-full text-sm font-semibold">Available Now</span>
+                        <span class="bg-gray-700 px-4 py-2 rounded-full text-sm">4+ Years Experience</span>
+                        <span class="bg-gray-700 px-4 py-2 rounded-full text-sm">Multi-Industry</span>
+                        <span class="bg-gray-700 px-4 py-2 rounded-full text-sm">Leadership Ready</span>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="fade-in">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-gray-900 p-6 rounded-lg text-center card-hover">
+                            <h3 class="text-3xl font-bold text-green-400 mb-2">25+</h3>
+                            <p class="text-gray-300">Major Campaigns</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg text-center card-hover">
+                            <h3 class="text-3xl font-bold text-green-400 mb-2">70%</h3>
+                            <p class="text-gray-300">Cost Reduction</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg text-center card-hover">
+                            <h3 class="text-3xl font-bold text-green-400 mb-2">2000%</h3>
+                            <p class="text-gray-300">Social Media Growth</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg text-center card-hover">
+                            <h3 class="text-3xl font-bold text-green-400 mb-2">5000+</h3>
+                            <p class="text-gray-300">Program Members</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employment History -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 text-green-400">Professional Experience</h2>
+            
+            <div class="timeline-line">
+                <!-- Current Position 1 -->
+                <div class="timeline-item">
+                    <div class="bg-black p-8 rounded-lg card-hover">
+                        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-green-400 mb-2">Director Events, Marketing and ICT</h3>
+                                <p class="text-lg text-gray-300 mb-2">African Corporate Governance Network (ACGN)</p>
+                                <p class="text-sm text-gray-400">Africa Level</p>
+                            </div>
+                            <span class="bg-green-600 px-4 py-2 rounded-full text-sm font-semibold mt-4 lg:mt-0">2024 - Present</span>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="text-lg font-semibold text-green-400 mb-2">Key Responsibilities:</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• Leading strategic initiatives in events management and marketing across the African continent</li>
+                                <li>• Overseeing ICT infrastructure and digital transformation projects</li>
+                                <li>• Managing cross-border corporate governance events and conferences</li>
+                                <li>• Developing and implementing pan-African marketing strategies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Position 2 -->
+                <div class="timeline-item">
+                    <div class="bg-black p-8 rounded-lg card-hover">
+                        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-green-400 mb-2">Digital Marketing Manager</h3>
+                                <p class="text-lg text-gray-300 mb-2">Theotoka Laboratory Solutions</p>
+                                <p class="text-sm text-gray-400">Healthcare Technology</p>
+                            </div>
+                            <span class="bg-green-600 px-4 py-2 rounded-full text-sm font-semibold mt-4 lg:mt-0">March 2025 - Present</span>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="text-lg font-semibold text-green-400 mb-2">Key Achievements:</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• Established and managing all digital assets from ground up</li>
+                                <li>• Managing email marketing campaigns for over 1,700 contacts</li>
+                                <li>• Achieved over 2000% activity rate increase in social media engagement</li>
+                                <li>• Leading SEO initiatives and creative design content creation</li>
+                                <li>• Responsible for budget management and ROI optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Previous Position -->
+                <div class="timeline-item">
+                    <div class="bg-black p-8 rounded-lg card-hover">
+                        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-green-400 mb-2">Assistant Marketing Manager</h3>
+                                <p class="text-lg text-gray-300 mb-2">Future Ventures Limited (Cheers Hypermarket)</p>
+                                <p class="text-sm text-gray-400">Lusaka, Zambia</p>
+                            </div>
+                            <span class="bg-gray-600 px-4 py-2 rounded-full text-sm font-semibold mt-4 lg:mt-0">June 2023 - January 2025</span>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="text-lg font-semibold text-green-400 mb-2">Key Achievements:</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• Managed marketing and design for 11+ retail branches</li>
+                                <li>• Successfully executed over 25 major sales-centered campaigns</li>
+                                <li>• Implemented loyalty program adding 5,000+ new members in under a year</li>
+                                <li>• Managed data entry and management for comprehensive loyalty program</li>
+                                <li>• Responsible for budget management and cost optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Systems Manager -->
+                <div class="timeline-item">
+                    <div class="bg-black p-8 rounded-lg card-hover">
+                        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-green-400 mb-2">Systems IT Manager & Marketing</h3>
+                                <p class="text-lg text-gray-300 mb-2">Chapi Core Tech</p>
+                                <p class="text-sm text-gray-400">Lusaka, Zambia</p>
+                            </div>
+                            <span class="bg-gray-600 px-4 py-2 rounded-full text-sm font-semibold mt-4 lg:mt-0">September 2021 - September 2023</span>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="text-lg font-semibold text-green-400 mb-2">Key Responsibilities:</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• Developed and maintained systems to improve operational efficiency by 70%</li>
+                                <li>• Led system upgrades by analyzing infrastructure and implementing performance improvements</li>
+                                <li>• Engaged stakeholders to ensure system updates met business expectations</li>
+                                <li>• Conducted market research to align system designs with customer needs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Care Executive -->
+                <div class="timeline-item">
+                    <div class="bg-black p-8 rounded-lg card-hover">
+                        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-green-400 mb-2">Customer Care Executive</h3>
+                                <p class="text-lg text-gray-300 mb-2">ISON Technologies</p>
+                                <p class="text-sm text-gray-400">Lusaka, Zambia</p>
+                            </div>
+                            <span class="bg-gray-600 px-4 py-2 rounded-full text-sm font-semibold mt-4 lg:mt-0">July 2021 - October 2021</span>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="text-lg font-semibold text-green-400 mb-2">Key Responsibilities:</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• Data Management and Customer Relations Management</li>
+                                <li>• Negotiation and client communication</li>
+                                <li>• Data entry and cold calling operations</li>
+                                <li>• Customer service excellence and relationship building</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 text-green-400">Education & Certifications</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-gray-900 p-8 rounded-lg card-hover">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-green-400">Bachelor's Degree</h3>
+                            <p class="text-lg text-gray-300">Business Administration in Computer Management & Information Systems (CMIS)</p>
+                            <p class="text-gray-400">Rusangu University</p>
+                        </div>
+                        <span class="bg-green-600 px-3 py-1 rounded-full text-sm">2018 - 2023</span>
+                    </div>
+                    <div class="space-y-2 text-gray-300">
+                        <p>• GPA: 2.8</p>
+                        <p>• Specialized in integrating business processes with information technology</p>
+                        <p>• Strong foundation in strategic management and system analysis</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 p-8 rounded-lg card-hover">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-green-400">Professional Certifications</h3>
+                            <p class="text-gray-400">Industry Recognition</p>
+                        </div>
+                        <span class="bg-gray-600 px-3 py-1 rounded-full text-sm">2021 - Present</span>
+                    </div>
+                    <div class="space-y-2 text-gray-300">
+                        <p>• Customer Care Certification - iSON Technologies</p>
+                        <p>• Seed for the Future (5G, AI, Cloud Computing) - Huawei</p>
+                        <p>• High School Certificate - Fordina Pandeli Secondary School</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Competencies -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 text-green-400">Core Competencies</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Technical Skills -->
+                <div class="bg-black p-8 rounded-lg card-hover">
+                    <h3 class="text-xl font-bold text-green-400 mb-6">Technical Skills</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span>HTML/CSS/JavaScript</span>
+                            <span class="text-green-400">Expert</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>System Analysis & Design</span>
+                            <span class="text-green-400">Expert</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Database Management</span>
+                            <span class="text-green-400">Advanced</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>SQL & Data Management</span>
+                            <span class="text-green-400">Advanced</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Skills -->
+                <div class="bg-black p-8 rounded-lg card-hover">
+                    <h3 class="text-xl font-bold text-green-400 mb-6">Business Skills</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span>Business Analytics</span>
+                            <span class="text-green-400">Expert</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Strategic Planning</span>
+                            <span class="text-green-400">Expert</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Project Management</span>
+                            <span class="text-green-400">Advanced</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Budget Management</span>
+                            <span class="text-green-400">Advanced</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing Skills -->
+                <div class="bg-black p-8 rounded-lg card-hover">
+                    <h3 class="text-xl font-bold text-green-400 mb-6">Marketing Skills</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span>Digital Marketing</span>
+                            <span class="text-green-400">Expert</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Social Media Management</span>
+                            <span class="text-green-400">Expert</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Campaign Management</span>
+                            <span class="text-green-400">Expert</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Brand Development</span>
+                            <span class="text-green-400">Advanced</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Projects -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 text-green-400">Key Projects & Achievements</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-900 p-8 rounded-lg card-hover">
+                    <h3 class="text-xl font-bold text-green-400 mb-4">Client Management System</h3>
+                    <p class="text-gray-300 mb-4">
+                        Designed and implemented a comprehensive system for an agricultural supply firm, 
+                        reducing manual operation costs by 70% and improving record keeping and supply chain management.
+                    </p>
+                    <div class="text-sm text-gray-400">
+                        <span class="bg-green-600 px-2 py-1 rounded text-white mr-2">System Development</span>
+                        <span class="bg-gray-600 px-2 py-1 rounded text-white">Cost Reduction</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 p-8 rounded-lg card-hover">
+                    <h3 class="text-xl font-bold text-green-400 mb-4">uLend Loan Management System</h3>
+                    <p class="text-gray-300 mb-4">
+                        Developed an integrated system for loan management, investor management, 
+                        and auction system for an SME in Lusaka, streamlining financial operations.
+                    </p>
+                    <div class="text-sm text-gray-400">
+                        <span class="bg-green-600 px-2 py-1 rounded text-white mr-2">Financial Systems</span>
+                        <span class="bg-gray-600 px-2 py-1 rounded text-white">Integration</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 p-8 rounded-lg card-hover">
+                    <h3 class="text-xl font-bold text-green-400 mb-4">Loyalty Program Implementation</h3>
+                    <p class="text-gray-300 mb-4">
+                        Coordinated and implemented a loyalty program for a leading retail company, 
+                        adding over 5,000 new members in less than a year.
+                    </p>
+                    <div class="text-sm text-gray-400">
+                        <span class="bg-green-600 px-2 py-1 rounded text-white mr-2">Customer Retention</span>
+                        <span class="bg-gray-600 px-2 py-1 rounded text-white">Growth</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 p-8 rounded-lg card-hover">
+                    <h3 class="text-xl font-bold text-green-400 mb-4">Marketing Campaign Success</h3>
+                    <p class="text-gray-300 mb-4">
+                        Coordinated over 25 major campaigns for a leading retail company, 
+                        increasing ROI by 10% and reducing costs by 30% in the last year.
+                    </p>
+                    <div class="text-sm text-gray-400">
+                        <span class="bg-green-600 px-2 py-1 rounded text-white mr-2">ROI Improvement</span>
+                        <span class="bg-gray-600 px-2 py-1 rounded text-white">Cost Optimization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-8 text-green-400">Ready to Hire?</h2>
+            <p class="text-xl text-gray-300 mb-12">
+                Let's discuss how my proven track record can drive your organization's success.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-black p-6 rounded-lg card-hover">
+                    <svg class="w-8 h-8 text-green-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <h3 class="font-bold mb-2">Email</h3>
+                    <p class="text-gray-400">perviousch@gmail.com</p>
+                </div>
+                
+                <div class="bg-black p-6 rounded-lg card-hover">
+                    <svg class="w-8 h-8 text-green-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6"></path>
+                    </svg>
+                    <h3 class="font-bold mb-2">LinkedIn</h3>
+                    <p class="text-gray-400">linkedin.com/in/pervious-chileya-631a6b183/</p>
+                </div>
+                
+                <div class="bg-black p-6 rounded-lg card-hover">
+                    <svg class="w-8 h-8 text-green-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <h3 class="font-bold mb-2">Location</h3>
+                    <p class="text-gray-400">Zambia (Remote Available)</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="netflix-green netflix-green-hover px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Schedule Interview
+                </button>
+                <button class="border border-green-600 text-green-400 hover:bg-green-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Download Full CV
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function goBack() {
+            window.location.href = 'index.php';
+        }
+
+        // Initialize animations
+        window.addEventListener('load', function() {
+            // Fade in elements
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>

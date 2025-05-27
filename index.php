@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Pervious Chileya - Professional Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'netflix': ['Helvetica Neue', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .profile-card {
+            transition: all 0.3s ease;
+        }
+        .profile-card:hover {
+            transform: scale(1.05);
+        }
+        .profile-avatar {
+            transition: all 0.3s ease;
+        }
+        .profile-card:hover .profile-avatar {
+            box-shadow: 0 0 0 4px white;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-black text-white font-netflix">
+    <!-- Background gradient -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black opacity-90"></div>
+
+    <div class="relative z-10 w-full max-w-6xl mx-auto text-center px-4 py-8 min-h-screen flex flex-col justify-center">
+        <!-- Profile Owner Section -->
+        <div class="mb-12 fade-in">
+            <!-- Profile Image -->
+            <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gray-600">
+                <img src="face.jpg?height=128&width=128" alt="Mr. Pervious Chileya" class="w-full h-full object-cover">
+            </div>
+            
+            <!-- Name and Qualification -->
+            <h1 class="text-4xl md:text-5xl font-bold mb-2 tracking-tight">Mr. Pervious Chileya</h1>
+            <p class="text-lg text-gray-300 mb-8">BA Business Administration CMIS</p>
+        </div>
+
+        <!-- Header -->
+        <div class="mb-12 fade-in">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Who's viewing?</h2>
+            <p class="text-xl text-gray-300">Choose your professional perspective</p>
+        </div>
+
+        <!-- Profile Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 fade-in">
+            <!-- Recruiter Profile -->
+            <div class="profile-card bg-transparent cursor-pointer group" onclick="selectProfile('recruiter')">
+                <div class="flex flex-col items-center p-6">
+                    <div class="profile-avatar w-32 h-32 rounded-lg bg-blue-600 flex items-center justify-center mb-4">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-300 group-hover:text-white transition-colors duration-300">View as Recruiter</h3>
+                    <p class="text-sm text-gray-400 text-center">Discover my talent and experience</p>
+                </div>
+            </div>
+
+            <!-- Employer Profile -->
+            <div class="profile-card bg-transparent cursor-pointer group" onclick="selectProfile('employer')">
+                <div class="flex flex-col items-center p-6">
+                    <div class="profile-avatar w-32 h-32 rounded-lg bg-green-600 flex items-center justify-center mb-4">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-300 group-hover:text-white transition-colors duration-300">View as Employer</h3>
+                    <p class="text-sm text-gray-400 text-center">See my professional capabilities</p>
+                </div>
+            </div>
+
+            <!-- Marketer Profile -->
+            <div class="profile-card bg-transparent cursor-pointer group" onclick="selectProfile('marketer')">
+                <div class="flex flex-col items-center p-6">
+                    <div class="profile-avatar w-32 h-32 rounded-lg bg-purple-600 flex items-center justify-center mb-4">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-300 group-hover:text-white transition-colors duration-300">View as Client</h3>
+                    <p class="text-sm text-gray-400 text-center">Explore my marketing services</p>
+                </div>
+            </div>
+
+            <!-- System Developer Profile -->
+            <div class="profile-card bg-transparent cursor-pointer group" onclick="selectProfile('developer')">
+                <div class="flex flex-col items-center p-6">
+                    <div class="profile-avatar w-32 h-32 rounded-lg bg-red-600 flex items-center justify-center mb-4">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-300 group-hover:text-white transition-colors duration-300">View as Client</h3>
+                    <p class="text-sm text-gray-400 text-center">Discover my development services</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manage Profiles Button -->
+        <button class="bg-transparent border border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white transition-colors duration-300 px-6 py-2 rounded fade-in">
+            Manage Profiles
+        </button>
+    </div>
+
+    <!-- Bottom fade -->
+    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
+
+    <script>
+        function selectProfile(profileType) {
+            console.log(`Selected profile: ${profileType}`);
+            
+            // Add visual feedback
+            const profileCards = document.querySelectorAll('.profile-card');
+            profileCards.forEach(card => {
+                card.style.opacity = '0.5';
+            });
+            
+            // Highlight selected card
+            event.currentTarget.style.opacity = '1';
+            event.currentTarget.style.transform = 'scale(1.1)';
+            
+            // Navigate to specific pages based on profile type
+            setTimeout(() => {
+                switch(profileType) {
+                    case 'recruiter':
+                        window.location.href = 'recruiter.html';
+                        break;
+                    case 'employer':
+                        window.location.href = 'employer.html';
+                        break;
+                    case 'marketer':
+                        window.location.href = 'marketing-services.html';
+                        break;
+                    case 'developer':
+                        window.location.href = 'development-services.html';
+                        break;
+                    default:
+                        alert(`Page for ${profileType} is coming soon!`);
+                }
+            }, 500);
+        }
+
+        // Add smooth scroll and fade-in animations
+        window.addEventListener('load', function() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
